@@ -9,12 +9,12 @@ cp -r . /run/user/1000/senpi/
 # Run __main__.py in the background
 python3 __main__.py &
 
-# Run http server on port 800
+# Run http server on port 8000
 #python3 -m http.server 8000 &
 cd /run/user/1000/senpi/ && python3 -m http.server 8080 > /dev/null 2>&1 &
 clear
 
-echo "SenPi is running. Open your browser to http://localhost:800 to view the dashboard."
+echo "SenPi is running. Open your browser to http://localhost:8080 to view the dashboard."
 echo "Press 'q' to exit."
 
 # Wait for user input to exit

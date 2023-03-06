@@ -71,5 +71,6 @@ while True:
 #	print(json_data)
 	except OSError as e:
 			print(f"Error: {e}")
-			f.close()
 			time.sleep(1)
+			f.close()
+			
