@@ -16,7 +16,6 @@ def get_system_data():
     data = {
         'timestamp': int(time.time()),
         'cpu_temp': get_cpu_temperature(),
-        'ram_usage': get_ram_usage(),
     }
 
     return json.dumps(data)

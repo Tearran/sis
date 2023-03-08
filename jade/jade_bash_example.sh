@@ -2,8 +2,9 @@
 
 # Function to clear the screen and save the cursor position
 function clear_screen() {
-  tput clear
-  tput cup 0 0
+	tput civis
+  	tput clear
+  	tput cup 0 0
     tput setaf 2 # Set the text color to green
 }
 
@@ -20,12 +21,13 @@ tput smcup
   clear_screen
 # Loop indefinitely
 while true; do
-  # Clear the screen and save the cursor position
-    tput setaf 3 # Set the text color to green
-    tput cup 0 0
 
+    #tput setaf 3 # Set the text color to green
+    tput cup 0 0
+	python3 "$HOME/.local/src/sister/jade/jade_plottext_example.py"
+	echo ""
   # Load the JSON file
-  json=$(cat /run/user/1000/its/sensors-api.json)
+  json=$(cat /run/user/1000/senpi/sensors-api.json)
 
   # Iterate through each key-value pair in the JSON object
   for key in $(echo $json | jq -r 'keys[]'); do
@@ -51,6 +53,7 @@ while true; do
   # Wait for user input
   read -t 1 -N 1 input
   if [[ $input == "q" ]]; then
+    tput cnorm
     break
   fi
 

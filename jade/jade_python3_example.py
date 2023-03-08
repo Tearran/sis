@@ -20,7 +20,7 @@ def print_colored(text, color):
 
 # Set the path for the RAM disk and the input file
 ram_disk_path = "/run/user/1000/"
-input_file = os.path.join(ram_disk_path, "its/sensors-api.json")
+input_file = os.path.join(ram_disk_path, "senpi/sensors-api.json")
 
 # Check if the input file exists
 if not os.path.exists(input_file):
