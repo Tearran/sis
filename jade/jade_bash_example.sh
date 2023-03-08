@@ -5,14 +5,17 @@ function clear_screen() {
 	tput civis
   	tput clear
   	tput cup 0 0
-    tput setaf 2 # Set the text color to green
 }
 
 # Function to restore the cursor position and draw the bottom bar
 function draw_bottom_bar() {
-  tput cup $((LINES-2)) 0
-  tput setaf 2 # Set the text color to green
-  echo "Press q to quit"
+  	tput cup $((LINES-2)) 0
+  	tput setaf 2 # Set the text color to green
+  	printf 'Press q to quit'
+
+#  echo "Press q to quit"
+	tput setab 0
+    tput setaf 7
 
 }
 
@@ -24,8 +27,9 @@ while true; do
 
     #tput setaf 3 # Set the text color to green
     tput cup 0 0
-	python3 "$HOME/.local/src/sister/jade/jade_plottext_example.py"
-	echo ""
+    tput setab 7
+	printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
+    tput setab 0
   # Load the JSON file
   json=$(cat /run/user/1000/senpi/sensors-api.json)
 

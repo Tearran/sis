@@ -7,10 +7,9 @@ def get_bmp280_data():
            filter=BMP280.IIR_FILTER_OFF, standby=BMP280.T_STANDBY_1000)
 
     data = {
-        'timestamp': int(time.time()),
-        'temperature': bmp.read_temperature(),
-        'pressure': bmp.read_pressure(),
+        'timestamp': round(time.time(), 2),
+        'temperature': round(bmp.read_temperature(), 1),
+        'pressure': round(bmp.read_pressure(), 1),
     }
-
 
     return json.dumps(data)

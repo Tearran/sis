@@ -29,8 +29,8 @@ def get_ina260_data():
 
     # Create a dictionary to store the data
     data = {
-        'shunt_voltage': shunt_voltage,
-        'bus_voltage': bus_voltage,
+        'shunt_voltage': round(shunt_voltage, 1),
+        'bus_voltage': round(bus_voltage, 1),
         'module_power': power
     }
 

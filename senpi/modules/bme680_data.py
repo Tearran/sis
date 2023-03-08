@@ -41,11 +41,11 @@ def get_bme680_data():
 
     # Build dictionary of sensor data
 	bme680_data = {}
-	bme680_data['timestamp'] = time.time()
-	bme680_data['temperature'] = temperature
-	bme680_data['humidity'] = humidity
-	bme680_data['pressure'] = pressure
-	bme680_data['gas_resistance'] = gas_resistance
+	bme680_data['timestamp'] = round(time.time(), 1)
+	bme680_data['temperature'] = round(temperature, 1)
+	bme680_data['humidity'] = round(humidity, 1)
+	bme680_data['pressure'] = round(pressure, 1)
+	bme680_data['gas_resistance'] = round(gas_resistance, 1)
 
 	# Return sensor information as JSON
 	return json.dumps(bme680_data)
