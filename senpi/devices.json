@@ -1,0 +1,66 @@
+[{
+	"part_number": "BM280",
+	"friendly_name": "BME280 Weather Sensor",
+	"address": "0x76",
+	"category": "Sensors",
+	"url_module": "Join our discrod to sugest a module",
+
+	"sub_category": "Weather"
+}, {
+	"part_number": "MCP9808",
+	"friendly_name": "MCP9808 Temperature Sensor",
+	"address": "0x18",
+	"category": "Sensors",
+	"url_module": "Join our discrod to sugest a module",
+	"sub_category": "Temperature"
+}, {
+	"part_number": "SSD1306",
+	"friendly_name": "SSD1306 OLED Display",
+	"address": "0x3C",
+	"category": "Displays",
+	"url_module": "Join our discrod to sugest a module",
+	"sub_category": "OLED"
+}, {
+	"part_number": "PCA9685",
+	"friendly_name": "PCA9685 PWM Controller",
+	"address": "0x40",
+	"category": "Motors",
+	"url_module": "Join our discrod to sugest a module",
+	"sub_category": "PWM"
+}, {
+	"part_number": "PCF8574",
+	"friendly_name": "PCF8574 I/O Expander",
+	"address": "0x20",
+	"category": "I/O",
+	"url_module": "Join our discrod to sugest a module",
+	"sub_category": "Expander"
+
+}, {
+	"part_number": "TSL25911",
+	"friendly_name": "TSL25911 Ambient Light Sensor",
+	"address": "0x29",
+	"category": "Sensors",
+	"url_module": "Join our discrod to sugest a module",
+	"sub_category": "Light"
+}, {
+	"part_number": "ICM20948",
+	"friendly_name": "ICM20948 Motion Tracking Sensor",
+	"address": "0x68",
+	"category": "Sensors",
+	"url_module": "Join our discrod to sugest a module",
+	"sub_category": "Motion"
+}, {
+	"part_number": "LTR390-UV-1",
+	"friendly_name": "LTR390-UV-1 UV Light Sensor",
+	"address": "0x53",
+	"category": "Sensors",
+	"url_module": "Join our discrod to sugest a module",
+	"sub_category": "Light"
+}, {
+	"part_number": "SGP40",
+	"friendly_name": "SGP40 VOC Sensor",
+	"address": "0x60",
+	"category": "Sensors",
+	"url_module": "Join our discrod to sugest a module",
+	"sub_category": "Gas"
+}]

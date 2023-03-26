@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Sensors API</title>
+    <style>
+      body {
+        background-color: #1e1e1e;
+        color: #d4d4d4;
+        font-family: Arial, sans-serif;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      th, td {
+        padding: 8px;
+
+        border-bottom: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #363636;
+        color: #d4d4d4;
+      }
+
+      td.key {
+        color: #f8f8f2;
+      }
+
+      td.value {
+        color: #8be9fd;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Sensors API</h1>
+    <table id="sensors-table">
+      <thead>
+        <tr>
+          <th>Key</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+    <script>
+      function updateTable() {
+        fetch('./senpi.json')
+          .then(response => response.json())
+          .then(data => {
+            const tbody = document.querySelector('#sensors-table tbody');
+            tbody.innerHTML = '';
+            for (const [key, value] of Object.entries(data)) {
+              if (typeof value === 'object') {
+                let subtable = '';
+                for (const [subkey, subvalue] of Object.entries(value)) {
+                  subtable += `
+                    <tr>
+                      <td class="key">${subkey}</td>
+                      <td class="value">${subvalue}</td>
+                    </tr>
+                  `;
+                }
+                tbody.insertAdjacentHTML('beforeend', `
+                  <tr>
+                    <td class="key">${key}</td>
+                    <td>
+                      <table>
+                        ${subtable}
+                      </table>
+                    </td>
+                  </tr>
+                `);
+              } else {
+                tbody.insertAdjacentHTML('beforeend', `
+                  <tr>
+                    <td class="key">${key}</td>
+                    <td class="value">${value}</td>
+                  </tr>
+                `);
+              }
+            }
+          })
+          .catch(error => console.error(error));
+      }
+
+      setInterval(updateTable, 1000);
+    </script>
+  </body>
+</html>
