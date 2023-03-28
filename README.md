@@ -8,14 +8,13 @@ SISTER (Seamlessly Integrating Sensor Architecture) is a three-tiered system des
 
 ## Concepts
 
-The SISTER architecture relies on several key concepts:
+SISTER relies on several key concepts:
 
 1. I2Cbus Sensors
 2. Drivers
 3. JSON formatted dictionaries
 4. Decoupled architecture for increased compatibility
-5. Modularity for scalability
-6. Security for user accounts
+5. Modular for scalability
 
 ## Frontend/dashboard<a name="front"></a>
 
