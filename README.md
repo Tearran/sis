@@ -2,7 +2,7 @@
 
 SISTER (Seamlessly Integrating Sensor Architecture) is a three-tiered system designed to seamlessly integrate sensors into a user-friendly interface. The system is made up of three main components:
 
-1. [Frontend/ Dashboard (adash)](#front)
+1. [Frontend/ Another Dashboard (adash)](#front)
 2. [Logic Layer/ Sensor Integration API (SenPI)](#senpi)
 3. [Data Layer](#data)
 
