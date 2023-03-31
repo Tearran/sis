@@ -6,6 +6,9 @@ SISTER (Seamlessly Integrating three-tiered Sensor Architecture) is a three-tier
 2. [Logic Layer/ Sensor Integration API (SenPI)](#senpi)
 3. [Data Layer](#data)
 
+```bash
+wget https://raw.githubusercontent.com/Tearran/sister/main/setup ; bash ./setup
+```
 ## Concepts
 
 SISTER relies on several key concepts:
