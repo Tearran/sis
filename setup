@@ -10,6 +10,7 @@ fi
 if apt-cache policy python3-pip | grep -q "Installed: (none)"; then
   echo "python3-pip is not installed."
   sudo apt-get install python3-pip
+  pip3 install smbus2
 else
   echo "python3-pip is already installed."
 fi
