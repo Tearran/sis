@@ -22,6 +22,7 @@ else
     echo "smbus and smbus2 have been installed."
   else
     echo "smbus and smbus2 are not installed."
+    exit 1
   fi
 fi
 
@@ -52,3 +53,4 @@ while true; do
     echo '{"icm20948":'$icm20948_sample' , "system info":'$system_info'}'  > senpi.json
 
 done
+
