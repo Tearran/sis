@@ -11,6 +11,20 @@ if [ "$i2c_status" -eq 1 ]; then
   sudo raspi-config nonint do_i2c 0
 fi
 
+# Check if smbus and smbus2 modules are installed
+python3 -c "import smbus, smbus2" 2>/dev/null
+if [ $? -eq 0 ]; then
+  echo "smbus and smbus2 are installed."
+else
+  # Display a message using whiptail
+  if (whiptail --title "Missing Python modules" --yesno "smbus and smbus2 modules are required for this script to run. Install them now?" 10 60) then
+    pip3 install smbus smbus2
+    echo "smbus and smbus2 have been installed."
+  else
+    echo "smbus and smbus2 are not installed."
+  fi
+fi
+
 # Check if http.server is already running
 if pgrep -f "python3 -m http.server 8000" > /dev/null; then
 	echo "http.server is already running"
